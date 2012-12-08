@@ -1,0 +1,19 @@
+This site, as a personal website, targets people who are interested in finding out about me and what I do and am interested in. I wanted it to have a little more personality, so I made sure the layout wasn't plain black on white--hence the monochromatic blue color scheme. I didn't want the colors to speak too loudly, so I stuck with the simple light and dark blues. The index is a splash page that you can't reach from the content of the site, because you don't need to reach it once you choose where you want to start. I tried to keep the whole site consistent with the same image (my cat, because I wanted a picture instead of no pictures, and I didn't want to use my picture) and same basic layout (content/what you need to look at is at the right).
+
+I chose initially just to do a contact form for my interactive element, but realized that it probably wasn't creative enough. Because this is a personal website and I did not want anything to be too distracting to make it look "cheap", I included a simple PHP game accessed through my portfolio. I only put the access via my portfolio because it is there to show some of what I've done with PHP, which belongs in my portfolio.
+
+Other interactive elements I considered were a color scheme chooser on the splash page, where before you look at the content, you can change the color scheme via a dropdown menu. My site would store this in a session. I was really keen on including that, but did not end up doing it because I had trouble figuring out how it would work out in the layout on the splash page. I also though of getting visitors to fill in a form before the splash page, asking them their name, student info, extracurricular interests and hobbies (interests and the others via dropdown menus). The information would be stored in a session, and when the user visited the content I could compare what they were studying and interested in with my own interests, and be more interractive. I didn't include this in case someone favorited a page (ie "Student Information") and then left the browser, which leaves the session, and then came back to the page later. It would make it complicated because I'd have to think of how I wanted to write the data--did I want to redirect them to the splash page if they didn't have nay information? Did I want to have a default no-data-needed result instead? So I did not use these ideas.
+
+
+Images:
+My cat is (c) me, but the other pictures were found here:
+http://1.bp.blogspot.com/_Wf_tzJ9XdkM/TPHtUnz3aaI/AAAAAAAAAQQ/-sH5J1DhPTU/s1600/Zebra.jpg
+http://physics.unl.edu/dept/directories/images/gradpics/Cat.jpg
+http://www.myfreewallpapers.net/nature/wallpapers/siberian-husky.jpg
+http://www.proctormuseum.us/Reptiles/Modern%20Reptiles/Modern%20Snakes/TexasGarterSnake-P0785-72dpi-26Apr%2705.jpg
+http://www.cockroachescontrol.com/cockroachcontrol3.png
+http://static.howstuffworks.com/gif/cockroach-1.jpg
+http://static.howstuffworks.com/gif/willow/coral-snake-info0.gif
+http://www.harlemfur.com/images/Dog_Olive.jpg
+http://dellone2one.com/wp-content/uploads/2009/11/AngelCat.jpg
+http://www.greatplay.net/images/zebra.jpg
