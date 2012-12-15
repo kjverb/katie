@@ -6,6 +6,8 @@
 
 	<!-- Place the HTML code for your CSS stylesheet here -->
 	<link rel="stylesheet" href="styles/main.css" type="text/css" />
+	<script type="text/JavaScript" src="javascript/raphael-min.js"></script> 
+
 </head>
 <body>
 	<div id="body">
@@ -23,63 +25,51 @@
 			</div>
 		</div>
 			<div id="rightside">
-			<!--row 1-->
-			<div class="row">
-				<div class="left">
-					<div class="top">Group Recipe Collection</div>
-					<div class="middle"><a href="images/grouprecipecollection2.png"><img src="images/thumbs/grc.png" width="100%" alt="Group Recipe Collection Facebook Application" /></a></div>
-					<div class="bottom">The Group Recipe Collection was a PHP/Heroku Facebook application developed in a college course with one other student. It began with a simple idea--being able to have a food blog on Facebook, where most people spend their time, so that people don't have to take the extra step into figuring out how to create a blog on Blogger, WordPress, etc. I designed and coded the majority of the key functions but the images were created by and the database was hooked up and hosted by my partner. The original prototype was designed by me and shown <a href="images/grouprecipecollection1.png">here</a>. I wrote a final description of the application, which you can see <a href="grouprecipecollection.pdf">here</a>. Within that paper is a URL to the Facebook application on Facebook. As of 7/8/2012 it is functioning, but we are not advertising it for public use because of the cost it would take for my partner to host the database containing the recipe information.</div>
-				</div>
-				<div class="right">
-					<div class="top">Etsy Meetup</div>
-					<div class="middle"><a href="images/etsymeetup.png"><img src="images/thumbs/etsymeetup.png" width="100%" alt="Etsy Meetup" /></a></div>
-					<div class="bottom">Working in a group of two other people during a college Web Information Systems class at Cornell University, we designed an web application that took the APIs of Google Maps, Etsy, and Yelp to help users decide where theye might congregate to craft or sell their Etsy products. Etsy is an online marketplace for handmade goods that individuals around the world create for profit and for fun. Our application takes an Etsy user's location and figures out users nearby and visualizes their location in Google Maps along with ideas for "meeting up" with data from Yelp. Our final application was a use prototype, taking specific users from the Ithaca, NY area as well as nearby Yelp locations. Etsy Users using this app would be able to find, create, and edit events. See a paper description <a href="etsymeetup.pdf">here</a>. This application is not live.</div>
-				</div>
-			</div>
-			<!--row 2-->	
-			<div class="row">
-				<div class="left">
-					<div class="top">Rage Bake</div>
-					<div class="middle"><a href="images/ragebake.png"><img src="images/thumbs/ragebake.png" width="100%" alt="Rage Bake Food Blog" /></a></div>
-					<div class="bottom">description</div>
-				</div>
-				<div class="right">
-					<div class="top">Table Stitch</div>
-					<div class="middle">
-						<a href="images/tablestitch.JPG">
-						<img src="images/thumbs/tablestitch.png" width="100%" alt="Table Stitch Rapid Prototype" /></a></div>
-					<div class="bottom">
-						desc</div>
-				</div>
-			</div>
-			<!--row 3-->
-			<div class="row">
-				<div class="left">
-					<div class="top">Cornell FDRL</div>
-					<div class="middle"><a href="images/fdrl.jpg"><img src="images/thumbs/fdrl.jpg" width="100%" alt="Cornell FDRL Home Page" /></a></div>
-					<div class="bottom">In my second college course in Web Design and Development, our final project in groups of four was to design a website for a client. We redesigned the website for the Cornell Fluid Dynamics Research Laboratories, which had had an old and outdated design. In this group of 4 I was in charge of most of the front-end web development--the design of individual pages, the creation of photo albums, and fixing up parts of the general layout, designed by another member. In this group project I took a large role in making sure people were on track and making sure that the project was done on time with all the right specifications. There was a lot of PHP and MySQL involved. As of 7/8/2012 the website is currently live, found <a href="http://web.mae.cornell.edu/fdrl/about.php">here</a>.</div>
-				</div>
-				<div class="right">
-					<div class="top">All Kids Can Learn</div>
-					<div class="middle"><a href="images/allkidscanlearn.jpg"><img src="images/thumbs/allkidscanlearn.png" width="100%" alt="All Kids Can Learn Home Page" /></a></div>
-					<div class="bottom">In my first college course in Web Design and Development, our final project in groups of four was to design a website for a client. We redesigned the website for a nonprofit after-school organization called All Kids Can Learn. They have not yet updated their website as of 7/8/2012, but you can see their original website at <a href="http://www.allkidscanlearn.net">http://www.allkidscanlearn.net</a>. I had the task of completely reorganizing the website in a much readable way, as well as creating the papers written with each checkpoint submission, the main PHP layout of the website, and the individual pages. I also had the lead role in the creation of the website and 
-						made sure the other three members were creating images, user-testing, and communicating with the client on time.</div>
-				</div>
-			</div>
-			<!--row 4-->
-			<div class="row">
-				<div class="left">
-					<div class="top">The Spread of Internet Memes</div>
-					<div class="middle"><img src="images/thumbs/thespreadofinternetmemes.png" width="100%" alt="The Spread of Internet Memes Paper" /></div>
-					<div class="bottom">description</div>
-				</div>
-				<div class="right">
-					<div class="top"></div>
-					<div class="middle"></div>
-					<div class="bottom"></div>
-				</div>
-			</div>
-		</div><!--end rightside div -->
+				<?php
+					//function to print projects
+					function printProject($array) {
+						print("<div class=\"top\">".$array['name']."</div>");
+						//print("<div class=\"middle\"><a href=".$array['imgURL']."><img src=\"".$array['imgURL']."\" height=\"107\" width=\"100%\" alt=\"". $array['name'] ."\" /></a></div>");
+						//start create thumb
+						echo "<div id=\"paper".$array['projectID']."\"></div>";
+						echo "<script type=\"text/javascript\">
+								var paper = Raphael(\"paper".$array['projectID']."\", 376,300);
+								var rect1 = paper.rect(0, 0, 376, 300);
+								var theImage = paper.image(\"".$array['imgURL']."\", 0, 0, 585, 511);
+								var img2=theImage.attr({\"clip-rect\":\"0 0 376 300\"});
+								img2.click(function(){
+									alert(\"pop up\");
+								});
+							</script>";
+						//end thumb
+						print("<div class=\"bottom\">".$array['summary']."</div>");
+						print("</div>");
+					}
+					
+					include 'password.inc';
+					
+					$mysqli = new mysqli($host, $login, $password, $databaseName);
+					//Check for errors, and only perform queries if there are none
+					if ( mysqli_connect_error() ) {
+						die("Can't connect to database: " . $mysqli->error);
+					}
+					$query1 = "SELECT * FROM project NATURAL JOIN projectSummary ORDER BY projectID";
+					$result = $mysqli->query($query1);
+					//check projectID: if odd, start new row and print info in div class "left". If even, print info in div class "right"
+					while($array = $result->fetch_assoc() ){
+						if($array['projectID']&1) { //if odd
+							print("<div class=\"row\">");
+								print("<div class=\"left\">");
+								printProject($array);
+						}else{//if even
+								print("<div class=\"right\">");
+								printProject($array);
+							print("</div>");
+						}
+					}
+					$mysqli->close();
+				?>
+			</div><!--end rightside div -->
 	</div>
 </body>
 </html>
