@@ -3,11 +3,10 @@
 
 <head>
 	<title>Katherine Verbeck's Portfolio</title>
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0"/>
 
-	<link rel="stylesheet" href="styles/fancystyle.css" />
-	<link rel="stylesheet" href="styles/main.css" type="text/css" />
-	<link rel="stylesheet" href="styles/mobile.css" type="text/css" media="only screen and (max-device-width: 480px), only screen and (max-width: 480px)" />
+	<!-- Place the HTML code for your CSS stylesheet here -->
+	 	<link rel="stylesheet" href="styles/fancystyle.css" />
+<link rel="stylesheet" href="styles/main.css" type="text/css" />
 	<script type="text/JavaScript" src="javascript/raphael-min.js"></script> 
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
 	<script>
@@ -29,6 +28,8 @@
 					}
 				});
 			}
+			
+			
 		});
 	</script>
 </head>
@@ -36,13 +37,13 @@
 	<div id="body">
 		<h1>Katherine Verbeck</h1>
 		<div id="leftside">
-			<img id="mainpic" src="images/katie.png" width="300" alt="Katherine Verbeck" />
+			<img src="images/katie.png" style="padding-left:20px" width="300" alt="Katherine Verbeck" />
 			<div id="navigation">
 				<p class="sidenav">
-					<a href="resume.pdf" class="sidenav" target="_blank">Resume</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-					<a href="http://www.linkedin.com/profile/view?id=166312313" target="_blank" class="sidenav">LinkedIn</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-					<a href="http://www.ragebaker.blogspot.com" target="_blank" class="sidenav">Blog</a><br/>
-					<a href="mailto:kjv26@cornell.edu" class="sidenav" style="margin-right:25%;font-weight:normal;font-variant:normal;font-size:15px">kjv26@cornell.edu</a>
+					<a href="resume.pdf" class="sidenav">Resume</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+					<a href="http://www.linkedin.com/profile/view?id=166312313" class="sidenav">LinkedIn</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+					<a href="http://www.ragebaker.blogspot.com" class="sidenav">Blog</a><br/>
+					<a href="mailto:kjv26@cornell.edu" class="sidenav" style="margin-right:18%;font-weight:normal;font-variant:normal;font-size:15px">kjv26@cornell.edu</a>
 				</p>
 			</div>
 		</div>
@@ -100,7 +101,7 @@
 					
 					$query2 = "SELECT * FROM project NATURAL JOIN projectFiles ORDER BY projectID";
 					$result2 = $mysqli->query($query2);
-					//add other files to fancybox slideshow depending on projectID and file type **TODO: sort
+					//add other files to fancybox slideshow depending on projectID and **TODO: FILE TYPE **
 					while($array2=$result2->fetch_assoc() ){
 						if($array2['fileType'] == "img") {
 							print("<div style=\"display:none\"><a rel=\"group".$array2['projectID']."\" 
@@ -109,14 +110,15 @@
 									title=\"".htmlentities($array2['fileTitle'])."\"><img src=\"".$array2['filePic']."\" width=\"100%\" alt=\"". $array2['fileTitle'] ."\" /></a></div>");
 						} else if($array2['fileType'] == "pdf") {
 							print("<div style=\"display:none\"><a rel=\"group".$array2['projectID']."\" 
-									id=\"inline\" 
-									href=\"#data\" 
-									title=\"".htmlentities($array2['fileTitle'])."\"><div id=\"data\"><img width=\"100%\" src=\"images/paperclipart.gif\"/></div></a></div>");
+									id=\"id".$array2['projectID']."f".$array2['fileID']."\" 
+									href=".$array2['filePic']." 
+									title=\"".htmlentities($array2['fileTitle'])."\"><img src=\"".$array2['filePic']."\" width=\"100%\" alt=\"". $array2['fileTitle'] ."\" /></a></div>");
 						} else { //must be a video
 							print("<div style=\"display:none\"><a rel=\"group".$array2['projectID']."\" 
 									class=\"iframe\" 
 									href=".$array2['fileURL']." 
 									title=\"".htmlentities($array2['fileTitle'])."\"><img src=\"".$array2['filePic']."\" width=\"100%\" alt=\"". $array2['fileTitle'] ."\" /></a></div>");
+
 						}
 					}
 					
