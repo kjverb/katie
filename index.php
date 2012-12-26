@@ -36,7 +36,7 @@
 	<div id="body">
 		<h1>Katherine Verbeck</h1>
 		<div id="leftside">
-			<img id="mainpic" src="images/katie.png" width="300" alt="Katherine Verbeck" />
+			<img id="mainpic" src="images/katie.png" width="80%" alt="Katherine Verbeck" />
 			<div id="navigation">
 				<p class="sidenav">
 					<a href="resume.pdf" class="sidenav" target="_blank">Resume</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -47,6 +47,9 @@
 			</div>
 		</div>
 			<div id="rightside">
+				<p id="sortProjects">
+					Sort by: <a href="index.php?sort=projectID&type=ASC">Date Added</a> | <a href="index.php?sort=yearCompleted&type=ASC">Year Completed</a> | <a href="index.php?sort=name&type=ASC">A - Z</a> | <a href="index.php?sort=name&type=DESC">Z - A</a>
+				</p>
 				<?php
 					//function to print projects
 					function printProject($array) {
@@ -83,22 +86,48 @@
 					if ( mysqli_connect_error() ) {
 						die("Can't connect to database: " . $mysqli->error);
 					}
-					$query1 = "SELECT * FROM project NATURAL JOIN projectSummary ORDER BY projectID";
-					$result = $mysqli->query($query1);
-					//check projectID: if odd, start new row and print info in div class "left". If even, print info in div class "right"
-					while($array = $result->fetch_assoc() ){
-						if($array['projectID']&1) { //if odd
-							print("<div class=\"row\">");
-								print("<div class=\"left\">");
-								printProject($array);
-						}else{//if even
-								print("<div class=\"right\">");
-								printProject($array);
-							print("</div>");
+					if(isset($_GET['sort']) && isset($_GET['type']) &&
+						($_GET['sort']=="projectID" || $_GET['sort']=="yearCompleted" || $_GET['sort']=="name") &&
+						($_GET['type']=="ASC" || $_GET['type']=="DESC")	) {
+						$query1 = "SELECT * FROM project NATURAL JOIN projectSummary ORDER BY ".$_GET['sort'] . " " . $_GET['type'];
+						$result = $mysqli->query($query1);
+						//check projectID: if odd, start new row and print info in div class "left". If even, print info in div class "right"
+						$i=0;
+						while($array = $result->fetch_assoc() ){
+							if ($i!=count($array)){
+								if($i&1) {//if odd
+									print("<div class=\"right\">");
+									printProject($array);
+								}else{//if even
+									print("<div class=\"row\">");
+									print("<div class=\"left\">");
+									printProject($array);
+								}
+								$i++;
+							}
+						}
+					} else {
+						$query1 = "SELECT * FROM project NATURAL JOIN projectSummary ORDER BY projectID";
+						$result = $mysqli->query($query1);
+						//check projectID: if odd, start new row and print info in div class "left". If even, print info in div class "right"
+						while($array = $result->fetch_assoc() ){
+							if($array['projectID']&1) { //if odd
+								print("<div class=\"row\">");
+									print("<div class=\"left\">");
+									printProject($array);
+							}else{//if even
+									print("<div class=\"right\">");
+									printProject($array);
+								print("</div>");
+							}
 						}
 					}
 					
-					$query2 = "SELECT * FROM project NATURAL JOIN projectFiles ORDER BY projectID";
+					if(isset($_GET['sort']) && isset($_GET['type'])) {
+						$query2 = "SELECT * FROM project NATURAL JOIN projectFiles ORDER BY ".$_GET['sort'] . " " . $_GET['type'];
+					} else {
+						$query2 = "SELECT * FROM project NATURAL JOIN projectFiles ORDER BY projectID";
+					}
 					$result2 = $mysqli->query($query2);
 					//add other files to fancybox slideshow depending on projectID and file type **TODO: sort
 					while($array2=$result2->fetch_assoc() ){

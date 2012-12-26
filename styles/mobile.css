@@ -39,6 +39,9 @@ div#header {
 	visibility: visible;
 }
 div#leftside {
+	margin-left: auto ;
+	margin-right: auto ;
+	text-align: center;
 	clear:right;
 	top:90px;
 	bottom:10px;
@@ -49,8 +52,8 @@ div#leftside {
 #rightside { 
 	border-left-width: 0px;
 	left: 0px; 
-	top: 200px;
-	width:0px;
+	top: 220px;
+	width:100%;
 	display: table;
 	padding-left:0px;
 }
@@ -61,13 +64,6 @@ a {
 }
 a:hover {
 	color: #303648;
-}
-hr#headhr{
-	width:75%;
-	color:#020F2F;
-	background-color:#020F2F;
-	height: 1px;
-	margin: 0px 0px 4px 0px;
 }
 div#main {
 	background-color: #93ACE8;
@@ -84,15 +80,6 @@ span#clicked_link{
 	letter-spacing: 4px;
 	text-align: left;
 }
-#content {
-	padding: 0px 0px 0px 260px;
-}
-span.contacttype {
-	color: #020F2F;
-	font-family: Verdana, Arial, sans-serif;
-	font-weight: bold;
-	font-size:16px;
-}
 .left {
 	width: 97%;
 	float:none;
@@ -102,4 +89,47 @@ span.contacttype {
 	width: 97%;
 	float:none;
 	clear:right;
+}
+p.sidenav {
+	color: #374061;
+	font-size: 18px;
+	font-family: Verdana, Arial, sans-serif;
+	font-variant: small-caps;
+	margin-left: auto ;
+	margin-right: auto ;
+	text-align: center;
+	letter-spacing:-1px;
+}
+a:link.sidenav {
+	color: #374061;
+	font-size: 18px;
+	font-family: Verdana, Arial, sans-serif;
+	font-variant: small-caps;
+	margin-left: auto ;
+	margin-right: auto ;
+	text-align: center;
+	letter-spacing:-1px;
+}
+a:active.sidenav {
+	color: #374681; 
+	font-size: 18px;
+	font-family: Verdana, Arial, sans-serif; 
+	font-variant: small-caps;
+	margin-left: auto ;
+	margin-right: auto ;
+	text-align: center;
+	letter-spacing:-1px;
+}
+a:hover.sidenav {
+	color: #374681; 
+	font-size: 18px;
+	font-family: Verdana, Arial, sans-serif; 
+	font-variant: small-caps; 
+	margin-left: auto ;
+	margin-right: auto ;
+	text-align: center;
+	letter-spacing:-1px;
+}
+p#sortProjects {
+	display:none;
 }
