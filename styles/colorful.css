@@ -1,20 +1,20 @@
-﻿body {
-	background: #f4f4f4;
+body {
+	background: #E3DEC1;
 	font-family: Verdana, Arial, sans-serif;
 }
 h1 {
-	color: #374061;
+	color: #B94629;
 	font-size: 50px;
 	font-variant: small-caps;
 }
 h2 {
-	color: #374061;
+	color: #B94629;
 	font-size: 30px;
 	font-variant: small-caps;
 	text-align: right;
 }
 h3 {
-	color: #374061;
+	color: #B94629;
 	font-size: 25px;
 	font-variant: small-caps;
 
@@ -23,40 +23,40 @@ a:link {
 	color: #121F54;
 }
 a:link.navigation {
-	color: #374061;
+	color: #B94629;
 	font-size: 44px;
 	font-variant: small-caps;
 }
 p.sidenav {
-	color: #374061;
+	color: #B94629;
 	font-size: 20px;
 	font-variant: small-caps;
 	text-align:right;
 }
 a:link.sidenav {
-	color: #374061;
+	color: #B94629;
 	font-size: 20px;
 	font-variant: small-caps;
 	text-align:right;
 }
 a:visited {
-	color: #121F54;
+	color: #B94629;
 }
 a:visited.sidenav {
-	color: #374061;
+	color: #B94629;
 }
 a:active {
-	color: #374681;
+	color: #B94629;
 }
 a:active.sidenav {
-	color: #374681;
+	color: #007241;
 }
 a:hover {
-	color: #374681;
+	color: #47AFAF;
 	text-decoration: overline;
 }
 a:hover.sidenav {
-	color: #374681;
+	color: #47AFAF;
 }
 #leftside {	
 	position: absolute; 
@@ -64,10 +64,10 @@ a:hover.sidenav {
 	text-align:right;
 	line-height:250%;
 }
-#rightside { 
+#rightside {
 	border-left-width: 5px;  
 	border-left-style: solid; 
-	border-left-color: #121F54; 
+	border-left-color: #B94629; 
 	position: absolute; 
 	left: 350px; 
 	top: 100px;
@@ -80,7 +80,7 @@ p {
 	color:#121F54;
 }
 span.clicked {
-	color: #374061;
+	color: #B94629;
 	font-size: 27px;
 	font-variant: small-caps;
 	text-align: right;
@@ -94,56 +94,67 @@ table {
 	clear:right;
 }
 .left {
-	width: 47%;
-	float:left;
+	width: 100%;
+	clear:right;
 }
 .right {
-	width: 47%;
-	float:right;
+	width: 100%;
 	clear:right;
 }
 img{
 	border:0px;
 }
 .top{
+	color: #B94629;
 	font-size: 24px;
 	font-variant: small-caps;
 	font-weight:bold;
+	text-align:center;
 }
 .bottom{
 	font-size:12px;
 }
-p#sortProjects{
-	text-align:right;
-	font-size:15px;
-	font-variant: small-caps;
-}
 .middle img {
-	height:250px;
-	width:100%;
-}
-p#stylePicker {
-	line-height:100%;
-	color:#673310;
-	font-size: 27px;
-	font-variant: small-caps;
+	height:300px;
+	width:47%;
+	float:left;
 }
 p.descriptionOfProject {
-	display:none;
+	display:block;
+	float:right;
+	text-align:justify;
+	color:#673310;
+}
+.descdiv {
+	display:block;
+	float:right;
+	width:47%;
 }
 p#stylePicker {
 	line-height:100%;
+	color:#B94629;
 	font-size: 20px;
 	font-variant: small-caps;
 }
 span#styleTitle{
-	color: #374061;
 	text-decoration: underline;
+	color:#B94629;
 }
 p#stylePicker a{
 	font-variant: none;
+	color:#B94629;
 	text-decoration: none;
 }
 p#stylePicker a:hover {
-	text-decoration: overline;
+	color: #47AFAF;
+	text-decoration: none;
+}
+p#sortProjects {
+	color:#673310;
+}
+#sortProjects a{
+	color:#673310;
+}
+#sortProjects a:hover{
+	color: #47AFAF;
 }

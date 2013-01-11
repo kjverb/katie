@@ -7,6 +7,15 @@
 
 	<link rel="stylesheet" href="styles/fancystyle.css" />
 	<link rel="stylesheet" href="styles/main.css" type="text/css" />
+	<script>
+		if(document.cookie != null) {
+			var styleFile = document.cookie.substr(6,document.cookie.length-1) + ".css";
+		} else {
+			var styleFile = "main.css";
+		}
+		document.writeln('<link rel="stylesheet" type="text/css" href="styles/' + styleFile + '">');
+	</script>
+
 	<link rel="stylesheet" href="styles/mobile.css" type="text/css" media="only screen and (max-device-width: 480px), only screen and (max-width: 480px)" />
 	<script type="text/JavaScript" src="javascript/raphael-min.js"></script> 
 	<script type="text/JavaScript" src="javascript/jquery-1.8.3.min.js"></script> 
@@ -44,6 +53,11 @@
 					<a href="http://www.linkedin.com/profile/view?id=166312313" target="_blank" class="sidenav">LinkedIn</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 					<a href="http://www.ragebaker.blogspot.com" target="_blank" class="sidenav">Blog</a><br/>
 					<a href="mailto:kjv26@cornell.edu" class="sidenav" style="margin-right:25%;font-weight:normal;font-variant:normal;font-size:15px">kjv26@cornell.edu</a>
+				</p>
+				<p id="stylePicker"><span id="styleTitle">Style:</span><br />
+					<a href="javascript: document.cookie='style=main'; window.location.reload();">Default</a><br />
+					<a href="javascript: document.cookie='style=largeProjectTheme'; window.location.reload();">Large Projects</a><br />
+					<a href="javascript: document.cookie='style=colorful'; window.location.reload();">Joined by Descriptions</a>
 				</p>
 			</div>
 		</div>

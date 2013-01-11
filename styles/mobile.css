@@ -133,3 +133,13 @@ a:hover.sidenav {
 p#sortProjects {
 	display:none;
 }
+p#stylePicker {
+	display:none;
+}
+.middle img {
+	height:250px;
+	width:100%;
+}
+p.descriptionOfProject {
+	display:none;
+}

@@ -1,4 +1,4 @@
-﻿body {
+body {
 	background: #f4f4f4;
 	font-family: Verdana, Arial, sans-serif;
 }
@@ -64,7 +64,7 @@ a:hover.sidenav {
 	text-align:right;
 	line-height:250%;
 }
-#rightside { 
+#rightside {
 	border-left-width: 5px;  
 	border-left-style: solid; 
 	border-left-color: #121F54; 
@@ -94,12 +94,11 @@ table {
 	clear:right;
 }
 .left {
-	width: 47%;
-	float:left;
+	width: 100%;
+	clear:right;
 }
 .right {
-	width: 47%;
-	float:right;
+	width: 100%;
 	clear:right;
 }
 img{
@@ -113,37 +112,13 @@ img{
 .bottom{
 	font-size:12px;
 }
-p#sortProjects{
-	text-align:right;
-	font-size:15px;
-	font-variant: small-caps;
-}
 .middle img {
-	height:250px;
+	height:500px;
 	width:100%;
 }
-p#stylePicker {
-	line-height:100%;
-	color:#673310;
-	font-size: 27px;
-	font-variant: small-caps;
-}
 p.descriptionOfProject {
+	display:block;
+}
+div.top{
 	display:none;
-}
-p#stylePicker {
-	line-height:100%;
-	font-size: 20px;
-	font-variant: small-caps;
-}
-span#styleTitle{
-	color: #374061;
-	text-decoration: underline;
-}
-p#stylePicker a{
-	font-variant: none;
-	text-decoration: none;
-}
-p#stylePicker a:hover {
-	text-decoration: overline;
 }
